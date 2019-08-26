@@ -18,6 +18,8 @@ const Header = ({ siteTitle }) => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          background:"#333",
+          padding:".5em"
         }}
       >
         <Link to="/">
@@ -37,7 +39,7 @@ const Header = ({ siteTitle }) => {
           </ul>
         </nav>
         <Link to="/contact" style={{color:"green"}} activeStyle={{color:"orange"}}>
-          <button>Contact</button>
+          <div style={{background:"white", width:"5em", height:"2em",borderRadius:".3em",textAlign:"center"}}>Contact</div>
         </Link>
       </header>
     </Headroom>
