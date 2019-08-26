@@ -26,17 +26,17 @@ const Header = ({ siteTitle }) => {
         <nav>
           <ul style={{ listStyle: "none" }}>
             <li className="nav_links" style={nav_links}>
-              <Link to="/">Home</Link>
+              <Link to="/" style={{color:"green"}} activeStyle={{color:"orange"}}>Home</Link>
             </li>
             <li className="nav_links" style={nav_links}>
-              <Link to="/about">About</Link>
+              <Link to="/about" style={{color:"green"}} activeStyle={{color:"orange"}}>About</Link>
             </li>
             <li className="nav_links" style={nav_links}>
-              <Link to="/services">Services</Link>
+              <Link to="/services" style={{color:"green"}} activeStyle={{color:"orange"}}>Services</Link>
             </li>
           </ul>
         </nav>
-        <Link to="/contact">
+        <Link to="/contact" style={{color:"green"}} activeStyle={{color:"orange"}}>
           <button>Contact</button>
         </Link>
       </header>
