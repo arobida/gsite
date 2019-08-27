@@ -38,8 +38,8 @@ const Header = ({ siteTitle }) => {
             </li>
           </ul>
         </nav>
-        <Link to="/contact" style={{color:"green"}} activeStyle={{color:"orange"}}>
-          <div style={{background:"white", width:"5em", height:"2em",borderRadius:".3em",textAlign:"center"}}>Contact</div>
+        <Link to="/contact" style={{color:"green",textDecoration:"none"}} activeStyle={{color:"orange"}}>
+          <div style={{background:"white", width:"5em", height:"2em",borderRadius:".3em",textAlign:"center",paddingTop:".5em"}}>Contact</div>
         </Link>
       </header>
     </Headroom>
