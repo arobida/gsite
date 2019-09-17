@@ -12,12 +12,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../components/styles/global"
 import { theme } from "../components/styles/theme"
+// Hooks
+import useMedia from "../hooks/useMedia"
 // Components
 import Header from "./header"
 import Footer from "./footer"
 import MobileMenu from "./mobileMenu"
-// Hooks
-import useMedia from "../hooks/useMedia"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
