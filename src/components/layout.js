@@ -8,10 +8,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import "./layout.css"
+// Global Styles & Theme
+import { ThemeProvider } from "styled-components"
+import { GlobalStyles } from "../components/styles/global"
+import { theme } from "../components/styles/theme"
 // Components
 import Header from "./header"
 import Footer from "./footer"
+import MobileMenu from "./mobileMenu"
 // Hooks
 import useMedia from "../hooks/useMedia"
 
@@ -28,18 +32,21 @@ const Layout = ({ children }) => {
   const isMobile = useMedia("(min-width:500px)")
 
   return (
-    <>
-      {isMobile ? (
-        <Header siteTitle={data.site.siteMetadata.title} />
-      ) : (
-        // This is where you would place the mobile header
-        <Header siteTitle={data.site.siteMetadata.title} />
-      )}
-      <div>
-        <main style={{ minHeight: "100vh" }}>{children}</main>
-      </div>
-      <Footer />
-    </>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        {isMobile ? (
+          <Header siteTitle={data.site.siteMetadata.title} />
+        ) : (
+          // This is where you would place the mobile header
+          <MobileMenu />
+        )}
+        <div>
+          <main style={{ minHeight: "100vh" }}>{children}</main>
+        </div>
+        <Footer />
+      </>
+    </ThemeProvider>
   )
 }
 
