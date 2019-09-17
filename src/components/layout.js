@@ -29,18 +29,18 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const isMobile = useMedia("(min-width:500px)")
+  const isMobile = useMedia("(max-width:500px)")
 
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyles />
         {isMobile ? (
-          <Header siteTitle={data.site.siteMetadata.title} />
-        ) : (
           <MobileMenu />
+        ) : (
+          <Header siteTitle={data.site.siteMetadata.title} />
         )}
-          <main style={{ minHeight: "100vh" }}>{children}</main>
+        <main style={{ minHeight: "100vh" }}>{children}</main>
         <Footer />
       </>
     </ThemeProvider>

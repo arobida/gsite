@@ -43,7 +43,7 @@ const Menu = ({ toggle }) => {
           <span role="img" aria-label="contact">
             &#x1f4e9;
           </span>
-          Contact
+          {"  "}Contact
         </Button>
       </Link>
     </StyledMenu>
