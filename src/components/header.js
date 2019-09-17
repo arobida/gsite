@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import Headroom from "react-headroom"
 
+import Button from "../components/button"
 import logo from "../images/gatsby-icon.png"
 
 const nav_links = {
@@ -18,8 +19,9 @@ const Header = ({ siteTitle }) => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          background:"#333",
-          padding:".5em"
+          background: "#333",
+          paddingLeft: "2em",
+          paddingRight:"2em"
         }}
       >
         <Link to="/">
@@ -28,18 +30,41 @@ const Header = ({ siteTitle }) => {
         <nav>
           <ul style={{ listStyle: "none" }}>
             <li className="nav_links" style={nav_links}>
-              <Link to="/" style={{color:"green"}} activeStyle={{color:"orange"}}>Home</Link>
+              <Link
+                to="/"
+                style={{ color: "green" }}
+                activeStyle={{ color: "orange" }}
+              >
+                Home
+              </Link>
             </li>
             <li className="nav_links" style={nav_links}>
-              <Link to="/about" style={{color:"green"}} activeStyle={{color:"orange"}}>About</Link>
+              <Link
+                to="/about"
+                style={{ color: "green" }}
+                activeStyle={{ color: "orange" }}
+              >
+                About
+              </Link>
             </li>
             <li className="nav_links" style={nav_links}>
-              <Link to="/services" style={{color:"green"}} activeStyle={{color:"orange"}}>Services</Link>
+              <Link
+                to="/services"
+                style={{ color: "green" }}
+                activeStyle={{ color: "orange" }}
+              >
+                Services
+              </Link>
             </li>
           </ul>
         </nav>
-        <Link to="/contact" style={{color:"green",textDecoration:"none"}} activeStyle={{color:"orange"}}>
-          <div style={{background:"white", width:"5em", height:"2em",borderRadius:".3em",textAlign:"center",paddingTop:".5em"}}>Contact</div>
+        <Link
+          to="/contact"
+          style={{ color: "green", textDecoration: "none",marginLeft:
+          "10px" }}
+          activeStyle={{ color: "orange" }}
+        >
+          <Button>Contact</Button>
         </Link>
       </header>
     </Headroom>
