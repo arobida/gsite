@@ -38,12 +38,9 @@ const Layout = ({ children }) => {
         {isMobile ? (
           <Header siteTitle={data.site.siteMetadata.title} />
         ) : (
-          // This is where you would place the mobile header
           <MobileMenu />
         )}
-        <div>
           <main style={{ minHeight: "100vh" }}>{children}</main>
-        </div>
         <Footer />
       </>
     </ThemeProvider>
