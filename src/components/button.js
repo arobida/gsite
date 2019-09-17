@@ -1,5 +1,5 @@
 import React from "react"
-import StyledButton from "../styles/styledButton"
+import StyledButton from "./styles/styledButton"
 
 const Button = ({ children }) => {
   return (
