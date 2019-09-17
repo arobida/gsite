@@ -10,6 +10,13 @@ const nav_links = {
   display: "inline-block",
   padding: ".5em",
 }
+const links = {
+  width:'2em',
+  textTransform:'uppercase',
+  color:'white',
+  textDecoration:'none',
+  fontWeight:'bold'
+}
 
 const Header = ({ siteTitle }) => {
   return (
@@ -32,7 +39,7 @@ const Header = ({ siteTitle }) => {
             <li className="nav_links" style={nav_links}>
               <Link
                 to="/"
-                style={{ color: "green" }}
+                style={links}
                 activeStyle={{ color: "orange" }}
               >
                 Home
@@ -41,7 +48,7 @@ const Header = ({ siteTitle }) => {
             <li className="nav_links" style={nav_links}>
               <Link
                 to="/about"
-                style={{ color: "green" }}
+                style={links}
                 activeStyle={{ color: "orange" }}
               >
                 About
@@ -50,7 +57,7 @@ const Header = ({ siteTitle }) => {
             <li className="nav_links" style={nav_links}>
               <Link
                 to="/services"
-                style={{ color: "green" }}
+                style={links}
                 activeStyle={{ color: "orange" }}
               >
                 Services
@@ -60,8 +67,6 @@ const Header = ({ siteTitle }) => {
         </nav>
         <Link
           to="/contact"
-          style={{ color: "green", textDecoration: "none",marginLeft:
-          "10px" }}
           activeStyle={{ color: "orange" }}
         >
           <Button fontSize={1} color="orange" shadow={3}>Contact</Button>
