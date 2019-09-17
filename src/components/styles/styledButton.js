@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 const StyledButton = styled.button`
     --borderWidth: 5;
-    --boxShadowDepth: 5;
-    --buttonColor: orange;
-    --fontSize: 1;
+    --boxShadowDepth: ${({ shadow }) => shadow?shadow:6};
+    --buttonColor: ${({ color }) => color?color:"orange"};
+    --fontSize: ${({ fontSize }) => fontSize?fontSize:3};
     --horizontalPadding: 16;
     --verticalPadding: 8;
     background: transparent;

@@ -64,7 +64,7 @@ const Header = ({ siteTitle }) => {
           "10px" }}
           activeStyle={{ color: "orange" }}
         >
-          <Button>Contact</Button>
+          <Button fontSize={1} color="orange" shadow={3}>Contact</Button>
         </Link>
       </header>
     </Headroom>

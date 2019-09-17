@@ -1,9 +1,9 @@
 import React from "react"
 import StyledButton from "./styles/styledButton"
 
-const Button = ({ children }) => {
+const Button = ({ children,fontSize, color, shadow }) => {
   return (
-    <StyledButton>
+    <StyledButton fontSize={fontSize} color={color} shadow={shadow} >
       {children}
       <span className="spans"></span>
       <span className="spans"></span>

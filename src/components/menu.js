@@ -53,7 +53,7 @@ const Menu = ({ toggle }) => {
         style={{ color: "green", textDecoration: "none", marginLeft: "10px" }}
         activeStyle={{ color: "orange" }}
       >
-        <Button>
+        <Button fontSize={2} color="orange" shadow={4}>
           <span role="img" aria-label="contact">
             &#x1f4e9;
           </span>
