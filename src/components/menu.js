@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useLayoutEffect} from "react"
 import { bool } from "prop-types"
 import { StyledMenu } from "./styles/styledMenu"
 import { Link } from "gatsby"
@@ -6,6 +6,17 @@ import logo from "../images/gatsby-icon.png"
 import Button from "./button"
 
 const Menu = ({ toggle }) => {
+	function useLockBodyScroll() {
+		useLayoutEffect(() => {
+		 // Get original body overflow
+		 const originalStyle = window.getComputedStyle(document.body).overflow;
+		 // Prevent scrolling on mount
+		 document.body.style.overflow = 'hidden';
+		 // Re-enable scrolling when component unmounts
+		 return () => document.body.style.overflow = originalStyle;
+		 }, []); // Empty array ensures effect is only run on mount and unmount
+	  }
+	  useLockBodyScroll()
   return (
     <StyledMenu toggle={toggle}>
       <Link to="/">
