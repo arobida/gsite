@@ -46,10 +46,10 @@ const StyledButton = styled.button`
     --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     z-index: 2;
   }
-  & .spans:nth-of-type(1):hover ~ b:nth-of-type(1),
-  & .spans:nth-of-type(2):hover ~ b:nth-of-type(2),
-  & .spans:nth-of-type(3):hover ~ b:nth-of-type(3),
-  & .spans:nth-of-type(4):hover ~ b:nth-of-type(4) {
+  & .spans:nth-of-type(1):hover ~ .bs:nth-of-type(1),
+  & .spans:nth-of-type(2):hover ~ .bs:nth-of-type(2),
+  & .spans:nth-of-type(3):hover ~ .bs:nth-of-type(3),
+  & .spans:nth-of-type(4):hover ~ .bs:nth-of-type(4) {
     --clip: inset(0 0 0 0);
   }
   & .spans:nth-of-type(1) {
