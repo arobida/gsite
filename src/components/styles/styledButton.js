@@ -9,6 +9,7 @@ const StyledButton = styled.button`
     --verticalPadding: 8;
     background: transparent;
     border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    border-radius:${({ borderRadius }) => borderRadius?borderRadius:0};
     box-shadow: calc(var(--boxShadowDepth) * 1px)
       calc(var(--boxShadowDepth) * 1px) 0 #888;
     color: var(--buttonColor);
@@ -68,6 +69,7 @@ const StyledButton = styled.button`
     -webkit-clip-path: var(--clip);
     background: var(--buttonColor);
     border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    border-radius:${({ borderRadius }) => borderRadius?borderRadius:0};
     bottom: calc(var(--borderWidth) * -1px);
     clip-path: var(--clip);
     color: var(--bg, #fafafa);

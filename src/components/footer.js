@@ -10,60 +10,79 @@ const nav_links = {
 
 const Footer = () => {
   return (
-    <footer
-      style={{
-        width: "100%",
-		height:"20%",
-        marginTop: "1em",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        background: "#333",
-        color: "white",
-      }}
-    >
-      <p>© {new Date().getFullYear()}</p>
-      <nav>
-        <ul style={{ listStyle: "none" }}>
-          <li className="nav_links" style={nav_links}>
-            <Link
-              to="/"
-              style={{ color: "white" }}
-              activeStyle={{ color: "orange" }}
-            >
-              Home
-            </Link>
-          </li>
-          <li className="nav_links" style={nav_links}>
-            <Link
-              to="/about"
-              style={{ color: "white" }}
-              activeStyle={{ color: "orange" }}
-            >
-              About
-            </Link>
-          </li>
-          <li className="nav_links" style={nav_links}>
-            <Link
-              to="/services"
-              style={{ color: "white" }}
-              activeStyle={{ color: "orange" }}
-            >
-              Services
-            </Link>
-          </li>
-          <li className="nav_links" style={nav_links}>
-            <Link
-              to="/contact"
-              style={{ color: "white" }}
-              activeStyle={{ color: "orange" }}
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <img src={logo} alt="logo" style={{ width: "2em" }} />
+    <footer>
+      <div
+        style={{
+          width: "100%",
+          height: "20%",
+          marginTop: "1em",
+          background: "#333",
+          color: "white",
+        }}
+      >
+      <div style={{textAlign:'center',paddingTop:'1em'}}>
+      <p>Join Our Mailing List:</p>
+      <input style={{height:'3em',borderRadius:'.6em'}} type="text" placeholder="Your Email" />
+      </div>
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          <ul style={{ listStyle: "none" }}>
+            <li className="nav_links" style={nav_links}>
+              <Link
+                to="/"
+                style={{ color: "white" }}
+                activeStyle={{ color: "orange" }}
+              >
+                Home
+              </Link>
+            </li>
+            <li className="nav_links" style={nav_links}>
+              <Link
+                to="/about"
+                style={{ color: "white" }}
+                activeStyle={{ color: "orange" }}
+              >
+                About
+              </Link>
+            </li>
+            <li className="nav_links" style={nav_links}>
+              <Link
+                to="/services"
+                style={{ color: "white" }}
+                activeStyle={{ color: "orange" }}
+              >
+                Services
+              </Link>
+            </li>
+            <li className="nav_links" style={nav_links}>
+              <Link
+                to="/contact"
+                style={{ color: "white" }}
+                activeStyle={{ color: "orange" }}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p>
+        <img
+          src={logo}
+          alt="logo"
+          style={{
+            width: "1.3em",
+            transform: "translateY(.2em)",
+            marginRight: ".3em",
+          }}
+        />
+        ©{new Date().getFullYear()}
+      </p>
     </footer>
   )
 }

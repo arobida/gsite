@@ -2,20 +2,20 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import Headroom from "react-headroom"
-
-import Button from "../components/button"
+// Components
 import logo from "../images/gatsby-icon.png"
+import Social from "../components/social"
 
 const nav_links = {
   display: "inline-block",
   padding: ".5em",
 }
 const links = {
-  width:'2em',
-  textTransform:'uppercase',
-  color:'white',
-  textDecoration:'none',
-  fontWeight:'bold'
+  width: "2em",
+  textTransform: "uppercase",
+  color: "white",
+  textDecoration: "none",
+  fontWeight: "bold",
 }
 
 const Header = ({ siteTitle }) => {
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => {
           alignItems: "center",
           background: "#333",
           paddingLeft: "2em",
-          paddingRight:"2em"
+          paddingRight: "2em",
         }}
       >
         <Link to="/">
@@ -37,20 +37,12 @@ const Header = ({ siteTitle }) => {
         <nav>
           <ul style={{ listStyle: "none" }}>
             <li className="nav_links" style={nav_links}>
-              <Link
-                to="/"
-                style={links}
-                activeStyle={{ color: "orange" }}
-              >
+              <Link to="/" style={links} activeStyle={{ color: "orange" }}>
                 Home
               </Link>
             </li>
             <li className="nav_links" style={nav_links}>
-              <Link
-                to="/about"
-                style={links}
-                activeStyle={{ color: "orange" }}
-              >
+              <Link to="/about" style={links} activeStyle={{ color: "orange" }}>
                 About
               </Link>
             </li>
@@ -63,14 +55,18 @@ const Header = ({ siteTitle }) => {
                 Services
               </Link>
             </li>
+            <li className="nav_links" style={nav_links}>
+              <Link
+                to="/contact"
+                style={links}
+                activeStyle={{ color: "orange" }}
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
-        <Link
-          to="/contact"
-          activeStyle={{ color: "orange" }}
-        >
-          <Button fontSize={1.3} color="orange" shadow={4}>Contact</Button>
-        </Link>
+        <Social />
       </header>
     </Headroom>
   )
