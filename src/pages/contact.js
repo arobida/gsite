@@ -47,12 +47,11 @@ const Contact = () => {
         />
         <input
           type="text"
-          placeholder="Reason For Contacting Us"
+          placeholder="Reason For Contact"
           style={{
             margin: "1em",
             textAlign: "center",
             height:'4em',
-            width: "20%",
             borderColor: "#333",
             borderRadius: ".5em",
           }}

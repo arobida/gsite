@@ -4,6 +4,7 @@ import { StyledMenu } from "./styles/styledMenu"
 import { Link } from "gatsby"
 import logo from "../images/gatsby-icon.png"
 import Button from "./button"
+import Social from "./social"
 
 const Menu = ({ toggle }) => {
   return (
@@ -17,35 +18,27 @@ const Menu = ({ toggle }) => {
         </span>
         Home
       </Link>
-      <Link
-        to="/about"
-        activeStyle={{ color: "orange" }}
-      >
+      <Link to="/about" activeStyle={{ color: "orange" }}>
         <span role="img" aria-label="about us">
           &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
         </span>
         About
       </Link>
-      <Link
-        to="/services"
-        activeStyle={{ color: "orange" }}
-      >
+      <Link to="/services" activeStyle={{ color: "orange" }}>
         <span role="img" aria-label="price">
           💵
         </span>
         Services
       </Link>
-      <Link
-        to="/contact"
-        activeStyle={{ color: "orange" }}
-      >
-        <Button fontSize={2} color="orange" shadow={4}>
-          <span role="img" aria-label="contact">
-            &#x1f4e9;
-          </span>
-          {"  "}Contact
-        </Button>
+      <Link to="/contact" activeStyle={{ color: "orange" }}>
+        <span role="img" aria-label="contact">
+          &#x1f4e9;
+        </span>
+        Contact
       </Link>
+      <div style={{ textAlign: "center",marginTop:'1.5em' }}>
+        <Social size="3em" color="white"/>
+      </div>
     </StyledMenu>
   )
 }
