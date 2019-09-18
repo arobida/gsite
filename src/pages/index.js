@@ -2,19 +2,37 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import BgImage from "../components/bgImage"
 import SEO from "../components/seo"
+import Button from "../components/button"
+import { theme } from "../components/styles/theme"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
+    <div style={{ marginBottom: `1.45rem`, margin: "auto" }}>
+      <BgImage />
+      <h1
+        style={{
+          transform: "translateY(-20em)",
+          fontSize:"40px",
+          webkitTextStroke: "1px black",
+          color: "white",
+          textShadow:
+            "3px 3px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000, 1px 1px 0 #000",
+        }}
+      >
+        Hello World
+      </h1>
+      <div style={{ transform: "translateY(-15em)" }}>
+        <Link to="/about">
+          <Button fontSize={1.7}>Learn More</Button>
+        </Link>
+      </div>
+    </div>
+
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/about">Go to page 2</Link>
   </Layout>
 )
 
