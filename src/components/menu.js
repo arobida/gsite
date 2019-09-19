@@ -9,9 +9,7 @@ import Social from "./social"
 const Menu = ({ toggle }) => {
   return (
     <StyledMenu toggle={toggle}>
-      <Link to="/">
-        <img src={logo} alt="logo" style={{ width: "2em" }} />
-      </Link>
+        <img src={logo} alt="logo" style={{ width: "2em",margin:'0 auto',marginBottom:'1em' }} />
       <Link to="/" activeStyle={{ color: "orange" }}>
         <span role="img" aria-label="about us">
           🏠
@@ -37,7 +35,7 @@ const Menu = ({ toggle }) => {
         Contact
       </Link>
       <div style={{ textAlign: "center",marginTop:'1.5em' }}>
-        <Social size="3em" color="white"/>
+        <Social size="2em" color="white"/>
       </div>
     </StyledMenu>
   )
