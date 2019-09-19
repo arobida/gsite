@@ -14,7 +14,7 @@ const IndexPage = () => (
       <BgImage />
       <h1
         style={{
-          transform: "translateY(-20em)",
+          transform: "translateY(-60vh)",
           fontSize:"40px",
           webkitTextStroke: "1px black",
           color: "white",
@@ -24,7 +24,7 @@ const IndexPage = () => (
       >
         Hello World
       </h1>
-      <div style={{ transform: "translateY(-15em)" }}>
+      <div style={{ transform: "translateY(-20vh)" }}>
         <Link to="/about">
           <Button fontSize={1.7}>Learn More</Button>
         </Link>
