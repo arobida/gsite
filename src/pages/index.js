@@ -16,7 +16,7 @@ const IndexPage = () => {
       >
         <BgImage />
         {
-          mobile ?(
+          mobile ? null:(
         <h1
           style={{
             transform: "translateY(-750px)",
@@ -29,7 +29,7 @@ const IndexPage = () => {
         >
           Hello World
         </h1>
-          ) :null
+          )
         }
         <div style={{ transform: `${mobile?"translateY(-60px)":"translateY(-220px)"}` }}>
           <Link to="/about">
