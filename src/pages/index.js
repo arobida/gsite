@@ -9,12 +9,13 @@ import Button from "../components/button"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div style={{ marginTop:'-4em',marginBottom: `1.45rem`, margin: "auto" }}>
-    <h1
+    <div style={{ marginTop: "-4em", marginBottom: `1.45rem`, margin: "auto" }}>
+      <BgImage />
+      <h1
         style={{
-          transform: "translateY(50px)",
-          fontSize:"40px",
-          webkitTextStroke: "1px black",
+          transform: "translateY(-750px)",
+          fontSize: "40px",
+          WebkitTextStroke: "1px black",
           color: "white",
           textShadow:
             "3px 3px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000, 1px 1px 0 #000",
@@ -22,9 +23,7 @@ const IndexPage = () => (
       >
         Hello World
       </h1>
-      <BgImage />
-
-      <div style={{ transform: "translateY(-20vh)" }}>
+      <div style={{ transform: "translateY(-220px)" }}>
         <Link to="/about">
           <Button fontSize={1.7}>Learn More</Button>
         </Link>
