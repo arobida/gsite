@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React,{useState,useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 // Global Styles & Theme
@@ -56,14 +56,16 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <>
+      <div style={{display:'flex',flexDirection:'column', minHeight:'100vh'}}>
         <GlobalStyles />
-        {isMobile ? (
-          <MobileMenu />
-        ) : (
-          <Header siteTitle={data.site.siteMetadata.title} />
-        )}
-        <main style={{ minHeight: "100vh", textAlign:'center' }}>{children}</main>
+          {isMobile ? (
+            <MobileMenu />
+          ) : (
+            <Header siteTitle={data.site.siteMetadata.title} />
+          )}
+          <main style={{ textAlign: "center",flex:'1' }}>{children}</main>
         <Footer />
+        </div>
       </>
     </ThemeProvider>
   )

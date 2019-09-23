@@ -10,11 +10,10 @@ import { theme } from "../components/styles/theme"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div style={{ marginBottom: `1.45rem`, margin: "auto" }}>
-      <BgImage />
-      <h1
+    <div style={{ marginTop:'-4em',marginBottom: `1.45rem`, margin: "auto" }}>
+    <h1
         style={{
-          transform: "translateY(-60vh)",
+          transform: "translateY(50px)",
           fontSize:"40px",
           webkitTextStroke: "1px black",
           color: "white",
@@ -24,6 +23,8 @@ const IndexPage = () => (
       >
         Hello World
       </h1>
+      <BgImage />
+
       <div style={{ transform: "translateY(-20vh)" }}>
         <Link to="/about">
           <Button fontSize={1.7}>Learn More</Button>

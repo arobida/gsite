@@ -10,12 +10,10 @@ const nav_links = {
 
 const Footer = () => {
   return (
-    <footer>
+    <footer style={{}}>
       <div
         style={{
           width: "100%",
-          height: "20%",
-          marginTop: "1em",
           background: "#333",
           color: "white",
         }}
@@ -71,7 +69,7 @@ const Footer = () => {
           </ul>
         </nav>
       </div>
-      <p>
+      <p style={{paddingBottom:''}}>
         <img
           src={logo}
           alt="logo"
