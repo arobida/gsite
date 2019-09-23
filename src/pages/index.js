@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import BgImage from "../components/bgImage"
 import SEO from "../components/seo"
 import Button from "../components/button"
-import { theme } from "../components/styles/theme"
 
 const IndexPage = () => (
   <Layout>

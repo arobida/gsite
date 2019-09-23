@@ -23,9 +23,11 @@ const Contact = () => {
           margin: "1em",
         }}
       >
+      <label>Full Name</label>
         <input
           type="text"
-          placeholder="Name"
+          placeholder="ex. john doe"
+          required
           style={{
             margin: "1em",
             textAlign: "center",
@@ -34,9 +36,11 @@ const Contact = () => {
             borderRadius: ".5em",
           }}
         />
+        <label>Email</label>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="ex. john@gmail.com"
+          required
           style={{
             margin: "1em",
             textAlign: "center",
@@ -45,10 +49,10 @@ const Contact = () => {
             borderRadius: ".5em",
           }}
         />
-        <label htmlFor="purpose">Reason For Contacting Us:</label>
+        <label>Reason For Contact</label>
         <textarea
           type="text"
-          name="purpose"
+          required
           style={{
             margin: "1em",
             height:'8em',
