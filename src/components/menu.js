@@ -3,7 +3,6 @@ import { bool } from "prop-types"
 import { StyledMenu } from "./styles/styledMenu"
 import { Link } from "gatsby"
 import logo from "../images/gatsby-icon.png"
-import Button from "./button"
 import Social from "./social"
 
 const Menu = ({ toggle }) => {

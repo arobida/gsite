@@ -10,7 +10,7 @@ const nav_links = {
 
 const Footer = () => {
   return (
-    <footer style={{}}>
+    <footer>
       <div
         style={{
           width: "100%",
