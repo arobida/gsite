@@ -45,14 +45,15 @@ const Contact = () => {
             borderRadius: ".5em",
           }}
         />
-        <input
+        <label htmlFor="purpose">Reason For Contacting Us:</label>
+        <textarea
           type="text"
-          placeholder="Reason For Contact"
+          name="purpose"
           style={{
             margin: "1em",
-            textAlign: "center",
-            height:'4em',
+            height:'8em',
             borderColor: "#333",
+            borderWidth:'.12em',
             borderRadius: ".5em",
           }}
         />
