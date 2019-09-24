@@ -21,6 +21,7 @@ const Contact = () => {
           flexDirection: "column",
           alignItems: "center",
           margin: "1em",
+          width:'100%'
         }}
       >
       <label>Full Name</label>
@@ -34,6 +35,7 @@ const Contact = () => {
             borderColor: "#333",
             height:'3em',
             borderRadius: ".5em",
+            width:'20em'
           }}
         />
         <label>Email</label>
@@ -47,6 +49,7 @@ const Contact = () => {
             borderColor: "#333",
             height:'3em',
             borderRadius: ".5em",
+            width:'20em'
           }}
         />
         <label>Reason For Contact</label>
@@ -55,10 +58,11 @@ const Contact = () => {
           required
           style={{
             margin: "1em",
-            height:'8em',
+            height:'10em',
             borderColor: "#333",
-            borderWidth:'.12em',
+            borderWidth:'.13em',
             borderRadius: ".5em",
+            width:'24em'
           }}
         />
         <Button fontSize={1.3} borderRadius=".5em" onClick={onSubmit}>

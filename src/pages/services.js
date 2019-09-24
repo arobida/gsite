@@ -5,79 +5,49 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Lorem = styled.p`
-width:80%;
-margin:auto;
-background:#ffd;
-padding:1em;
-`
 
 const Services = () => {
-return(
-  <Layout>
-    <SEO title="Services" />
-    <h1>Hi from the services page</h1>
-    <p>Welcome to the services page</p>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Lorem>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae dolores sed pariatur sequi! Sunt fugit non qui nostrum esse ipsum quam? Voluptatum deleniti accusantium hic dolore dolorem corrupti cupiditate?
-    </Lorem>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO title="Services" />
+      <h1>Services</h1>
+      <p>Check out all of our services</p>
+      <div style={{display:'flex',flexWrap:'wrap'}}>
+      {allServices.map(service=>{
+        return(
+          <div key={service.title} style={{width:'20em', margin:' 1em auto',border:'2px solid #333', borderRadius:'1em'}}>
+          <h3>{service.title}</h3>
+          <p>{service.summary}</p>
+          </div>
+        )
+      })}
+      </div>
+      <Link to="/">Go back to the homepage</Link>
+    </Layout>
+  )
 }
 
 export default Services
+//fake data
+const allServices = [
+  {
+    title:'Mergers',
+      summary:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae dicta, iste illo architecto consectetur sequi neque omnis necessitatibus ipsa excepturi, nemo beatae ea sapiente doloremque officia cumque inventore voluptatibus placeat.",
+  },
+  {
+    title:'Business Sales',
+      summary:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae dicta, iste illo architecto consectetur sequi neque omnis necessitatibus ipsa excepturi, nemo beatae ea sapiente doloremque officia cumque inventore voluptatibus placeat.",
+  },
+  {
+    title:'Bussiness Advice',
+      summary:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae dicta, iste illo architecto consectetur sequi neque omnis necessitatibus ipsa excepturi, nemo beatae ea sapiente doloremque officia cumque inventore voluptatibus placeat.",
+  },
+  {
+    title:'Accounting',
+      summary:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae dicta, iste illo architecto consectetur sequi neque omnis necessitatibus ipsa excepturi, nemo beatae ea sapiente doloremque officia cumque inventore voluptatibus placeat.",
+  },
+  {
+    title:'Tax Preperation',
+      summary:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae dicta, iste illo architecto consectetur sequi neque omnis necessitatibus ipsa excepturi, nemo beatae ea sapiente doloremque officia cumque inventore voluptatibus placeat.",
+  },
+]
