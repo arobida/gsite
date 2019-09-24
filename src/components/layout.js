@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // Global Styles & Theme
 import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "../components/styles/global"
-import { theme } from "../components/styles/theme"
+import {theme}  from "../components/styles/theme"
 // Hooks
 // import useMedia from "../hooks/useMedia"
 // Components
@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
     return state
   }
   const isMobile = useMedia("(max-width:500px)")
-
+  console.log(theme)
   return (
     <ThemeProvider theme={theme}>
       <>

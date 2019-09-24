@@ -31,7 +31,7 @@ const IndexPage = () => {
         </h1>
           )
         }
-        <div style={{ transform: `${mobile?"translateY(-60px)":"translateY(-220px)"}` }}>
+        <div style={{ transform: `${mobile?"translateY(10px)":"translateY(-220px)"}` }}>
           <Link to="/about">
             <Button fontSize={1.7}>Learn More</Button>
           </Link>
