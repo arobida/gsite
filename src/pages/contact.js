@@ -30,7 +30,7 @@ const Contact = () => {
       <div
         style={{
           display: "flex",
-          flexWrap:'wrap-reverse',
+          flexWrap: "wrap-reverse",
           justifyContent: "space-around",
           alignItems: "flex-start",
         }}
@@ -45,7 +45,7 @@ const Contact = () => {
         ) : (
           <Sent name={name} email={email} reset={reset} />
         )}
-        <ul style={{ listStyle: "none",margin:'1em' }}>
+        <ul style={{ listStyle: "none", margin: "1em" }}>
           <h2>Business Hours</h2>
           <li>Monday - Friday: 7am-4pm</li>
           <li>Saturday: 9am-3pm</li>
@@ -64,8 +64,8 @@ const Contact = () => {
 
 const Sent = ({ name, email, reset }) => {
   const appear = useSpring({
-    to: {  height:"369px",transform: "translateX(0%)" },
-    from: {  height:"369px",transform: "translateX(-100%)" },
+    to: { height: "369px", transform: "translateX(0%)" },
+    from: { height: "369px", transform: "translateX(-100%)" },
     config: config.wobbly,
   })
   return (
@@ -88,41 +88,45 @@ const Form = ({ onSubmit, name, email, purpose }) => {
         margin: "1em",
       }}
     >
-    <h2>Send A Message</h2>
-      <label>
-        Name
-      </label>
+      <h2>Send A Message</h2>
+      <label>Name</label>
       <input
-          type="text"
-          placeholder="ex. john doe"
-          required
-          value={name.value}
-          onChange={name.onChange}
-          style={{
-            textAlign: "center",
-            borderColor: "#333",
-            height: "3em",
-            borderRadius: ".5em",
-            width: "13em",
-          }}
-        />
-      <label>
-        Email
-      </label>
+        type="text"
+        placeholder="ex. john doe"
+        required
+        value={name.value}
+        onChange={name.onChange}
+        style={{
+          textAlign: "center",
+          height: "3em",
+          width: "13em",
+          marginBottom: "5px",
+          borderTop: "0",
+          borderLeft: "0",
+          borderRight: "0",
+          borderBottomWidth: "1px",
+          borderBottomColor: "#333",
+        }}
+      />
+      <label>Email</label>
       <input
-          type="email"
-          placeholder="ex. john@gmail.com"
-          required
-          value={email.value}
-          onChange={email.onChange}
-          style={{
-            textAlign: "center",
-            borderColor: "#333",
-            height: "3em",
-            borderRadius: ".5em",
-            width: "13em",
-          }}
-        />
+        type="email"
+        placeholder="ex. john@gmail.com"
+        required
+        value={email.value}
+        onChange={email.onChange}
+        style={{
+          textAlign: "center",
+          height: "3em",
+          width: "13em",
+          marginBottom: "5px",
+          borderTop: "0",
+          borderLeft: "0",
+          borderRight: "0",
+          borderBottomWidth: "1px",
+          borderBottomColor: "#333",
+        }}
+      />
       <label>Reason For Contact</label>
       <textarea
         type="text"
@@ -130,12 +134,14 @@ const Form = ({ onSubmit, name, email, purpose }) => {
         value={purpose.value}
         onChange={purpose.onChange}
         style={{
-          height: "10em",
-          borderColor: "#333",
-          borderWidth: ".13em",
-          borderRadius: ".5em",
+          height: "6em",
           width: "20em",
-          marginBottom:'1em'
+          marginBottom: "1em",
+          borderTop: "0",
+          borderLeft: "0",
+          borderRight: "0",
+          borderBottomWidth: "1px",
+          borderBottomColor: "#333",
         }}
       />
       <Button fontSize={1} borderRadius=".3em" onClick={onSubmit}>
