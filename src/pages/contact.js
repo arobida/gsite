@@ -91,14 +91,14 @@ const Form = ({ onSubmit, name, email, purpose }) => {
     <h2>Send A Message</h2>
       <label>
         Name
-        <input
+      </label>
+      <input
           type="text"
           placeholder="ex. john doe"
           required
           value={name.value}
           onChange={name.onChange}
           style={{
-            margin: "1em",
             textAlign: "center",
             borderColor: "#333",
             height: "3em",
@@ -106,17 +106,16 @@ const Form = ({ onSubmit, name, email, purpose }) => {
             width: "13em",
           }}
         />
-      </label>
       <label>
         Email
-        <input
+      </label>
+      <input
           type="email"
           placeholder="ex. john@gmail.com"
           required
           value={email.value}
           onChange={email.onChange}
           style={{
-            margin: "1em",
             textAlign: "center",
             borderColor: "#333",
             height: "3em",
@@ -124,7 +123,6 @@ const Form = ({ onSubmit, name, email, purpose }) => {
             width: "13em",
           }}
         />
-      </label>
       <label>Reason For Contact</label>
       <textarea
         type="text"
@@ -132,12 +130,12 @@ const Form = ({ onSubmit, name, email, purpose }) => {
         value={purpose.value}
         onChange={purpose.onChange}
         style={{
-          margin: "1em",
           height: "10em",
           borderColor: "#333",
           borderWidth: ".13em",
           borderRadius: ".5em",
           width: "20em",
+          marginBottom:'1em'
         }}
       />
       <Button fontSize={1} borderRadius=".3em" onClick={onSubmit}>
