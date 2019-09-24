@@ -22,7 +22,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-manifest`,
-      theme: `/static/theme-b5cc7ef3989f1964710db2d4bfe77b17.js`,
       options: {
         name: `gatsby-site-template`,
         short_name: `gsite`,
@@ -34,6 +33,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `sitemap`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,

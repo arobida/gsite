@@ -1,14 +1,27 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import logo from "../images/gatsby-icon.png"
 
 const nav_links = {
-  display: "inline-block",
   padding: ".3em",
 }
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(
+        filter: { sourceInstanceName: { eq: "sitemap" }, name: { nin: "404" } }
+      ) {
+        edges {
+          node {
+            sourceInstanceName
+            name
+          }
+        }
+      }
+    }
+  `)
   return (
     <footer>
       <div
@@ -18,58 +31,39 @@ const Footer = () => {
           color: "white",
         }}
       >
-      <div style={{textAlign:'center',paddingTop:'1em'}}>
-      <p>Join Our Mailing List:</p>
-      <input style={{height:'3em',borderRadius:'.6em'}} type="text" placeholder="Your Email" />
-      </div>
-        <nav
+        <div style={{ textAlign: "center", paddingTop: "1em" }}>
+          <p>Join Our Mailing List:</p>
+          <input
+            style={{ height: "3em", borderRadius: ".6em" }}
+            type="text"
+            placeholder="Your Email"
+          />
+        </div>
+        <ul
           style={{
             display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
+            flexDirection: `row`,
+            justifyContent: "center",
+            listStyle: "none",
           }}
         >
-          <ul style={{ listStyle: "none" }}>
-            <li className="nav_links" style={nav_links}>
-              <Link
-                to="/"
-                style={{ color: "white" }}
-                activeStyle={{ color: "orange" }}
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav_links" style={nav_links}>
-              <Link
-                to="/about"
-                style={{ color: "white" }}
-                activeStyle={{ color: "orange" }}
-              >
-                About
-              </Link>
-            </li>
-            <li className="nav_links" style={nav_links}>
-              <Link
-                to="/services"
-                style={{ color: "white" }}
-                activeStyle={{ color: "orange" }}
-              >
-                Services
-              </Link>
-            </li>
-            <li className="nav_links" style={nav_links}>
-              <Link
-                to="/contact"
-                style={{ color: "white" }}
-                activeStyle={{ color: "orange" }}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
+          {data.allFile.edges.map(link => {
+            return (
+              <li key={link.node.name} style={nav_links}>
+                <Link
+                  to={`/${link.node.name === "index" ? "" : link.node.name}`}
+                  style={{ color: "white" }}
+                  activeStyle={{ color: "orange" }}
+                >
+                  {link.node.name === "index" ? "home" : link.node.name}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
       </div>
-      <p style={{paddingBottom:''}}>
+
+      <p style={{ paddingBottom: "" }}>
         <img
           src={logo}
           alt="logo"
