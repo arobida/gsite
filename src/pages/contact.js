@@ -20,6 +20,9 @@ const Contact = () => {
 
       We will respond shortly to: ${email.value}`
     )
+   name.clear()
+   email.clear()
+   purpose.clear()
   }
   return (
     <Layout>
@@ -48,7 +51,7 @@ const Contact = () => {
             borderColor: "#333",
             height: "3em",
             borderRadius: ".5em",
-            width: "20em",
+            width: "15em",
           }}
         />
         <label>Email</label>
@@ -64,7 +67,7 @@ const Contact = () => {
             borderColor: "#333",
             height: "3em",
             borderRadius: ".5em",
-            width: "20em",
+            width: "15em",
           }}
         />
         <label>Reason For Contact</label>
@@ -79,7 +82,7 @@ const Contact = () => {
             borderColor: "#333",
             borderWidth: ".13em",
             borderRadius: ".5em",
-            width: "24em",
+            width: "20em",
           }}
         />
         <Button fontSize={1.3} borderRadius=".5em" onClick={onSubmit}>
