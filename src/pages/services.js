@@ -11,10 +11,10 @@ const Services = () => {
       <SEO title="Services" />
       <h1>Services</h1>
       <p>Check out all of our services</p>
-      <div style={{display:'flex',flexWrap:'wrap'}}>
+      <div style={{display:'flex',flexWrap:'wrap',}}>
       {allServices.map(service=>{
         return(
-          <div key={service.title} style={{width:'20em', margin:' 1em auto',border:'2px solid #333', borderRadius:'1em'}}>
+          <div key={service.title} style={{width:'20em', margin:' 1em auto',border:'2px solid #333', borderRadius:'1em',alignSelf:'space-around'}}>
           <h3>{service.title}</h3>
           <p>{service.summary}</p>
           </div>
