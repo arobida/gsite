@@ -15,7 +15,12 @@ const Contact = () => {
     e.preventDefault()
     setToggle(!toggle)
   }
-  const reset = () => setToggle(false)
+  const reset = () => {
+    setToggle(false)
+    name.clear()
+    email.clear()
+    purpose.clear()
+  }
   return (
     <Layout>
       <SEO title="Contact" />
@@ -31,7 +36,7 @@ const Contact = () => {
 }
 
 const Sent = ({ name, email, reset }) => (
-  <div>
+  <div style={{transition:'2s',transform:"translateX(0%)"}}>
     <h2>Thanks For Reaching Out {name.value}!</h2>
     <p>We will respond shortly to: {email.value}</p>
     <button onClick={reset}>Reset</button>
