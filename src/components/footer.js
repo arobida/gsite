@@ -3,10 +3,6 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import logo from "../images/gatsby-icon.png"
 
-const nav_links = {
-  padding: ".3em",
-}
-
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -49,7 +45,7 @@ const Footer = () => {
         >
           {data.allFile.edges.map(link => {
             return (
-              <li key={link.node.name} style={nav_links}>
+              <li key={link.node.name} style={{padding:'.3em'}}>
                 <Link
                   to={`/${link.node.name === "index" ? "" : link.node.name}`}
                   style={{ color: "white" }}
@@ -62,7 +58,6 @@ const Footer = () => {
           })}
         </ul>
       </div>
-
       <p style={{ paddingBottom: "" }}>
         <img
           src={logo}

@@ -85,7 +85,7 @@ const Contact = () => {
             width: "20em",
           }}
         />
-        <Button fontSize={1.3} borderRadius=".5em" onClick={onSubmit}>
+        <Button fontSize={1.3} borderRadius=".3em" onClick={onSubmit}>
           Send
         </Button>
       </form>

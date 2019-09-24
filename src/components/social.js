@@ -5,9 +5,9 @@ import { theme } from "./styles/theme"
 const Social = ({size,color}) => {
   return (
     <div>
-      <FaFacebook size={size?size:"1.3em"} color={color?color:theme.primaryLight} style={{margin:'.3em'}}/>
-      <FaInstagram size={size?size:"1.3em"} color={color?color:theme.primaryLight} style={{margin:'.3em'}}/>
-      <FaEnvelope size={size?size:"1.3em"} color={color?color:theme.primaryLight} style={{margin:'.3em'}}/>
+      <FaFacebook size={size?size:"1.3em"} color={color?color:"orange"} style={{margin:'.3em'}}/>
+      <FaInstagram size={size?size:"1.3em"} color={color?color:"orange"} style={{margin:'.3em'}}/>
+      <FaEnvelope size={size?size:"1.3em"} color={color?color:"orange"} style={{margin:'.3em'}}/>
     </div>
   )
 }

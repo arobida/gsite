@@ -66,7 +66,7 @@ const Header = ({ siteTitle }) => {
             </li>
           </ul>
         </nav>
-        <Social />
+        <Social color="white"/>
       </header>
     </Headroom>
   )

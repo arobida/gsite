@@ -52,7 +52,6 @@ const Layout = ({ children }) => {
     return state
   }
   const isMobile = useMedia("(max-width:500px)")
-  console.log(theme)
   return (
     <ThemeProvider theme={theme}>
       <>
