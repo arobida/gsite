@@ -30,7 +30,7 @@ const Contact = () => {
       <div
         style={{
           display: "flex",
-          flexWrap:'wrap',
+          flexWrap:'wrap-reverse',
           justifyContent: "space-around",
           alignItems: "flex-start",
         }}
@@ -64,8 +64,8 @@ const Contact = () => {
 
 const Sent = ({ name, email, reset }) => {
   const appear = useSpring({
-    to: { transform: "translateX(0%)" },
-    from: { transform: "translateX(-100%)" },
+    to: {  height:"369px",transform: "translateX(0%)" },
+    from: {  height:"369px",transform: "translateX(-100%)" },
     config: config.wobbly,
   })
   return (
