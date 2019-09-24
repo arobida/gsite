@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
+import { useSpring, animated, config } from "react-spring"
 import useInput from "../hooks/useInput"
 
 import Layout from "../components/layout"
@@ -35,13 +36,20 @@ const Contact = () => {
   )
 }
 
-const Sent = ({ name, email, reset }) => (
-  <div style={{transition:'2s',transform:"translateX(0%)"}}>
-    <h2>Thanks For Reaching Out {name.value}!</h2>
-    <p>We will respond shortly to: {email.value}</p>
-    <button onClick={reset}>Reset</button>
-  </div>
-)
+const Sent = ({ name, email, reset }) => {
+  const appear = useSpring({
+    to:{transform:"translateX(0%)"},
+    from:{transform:"translateX(-100%)"},
+    config:config.wobbly
+  })
+  return (
+    <animated.div style={appear}>
+      <h2>Thanks For Reaching Out {name.value}!</h2>
+      <p>We will respond shortly to: {email.value}</p>
+      <button onClick={reset}>Reset</button>
+    </animated.div>
+  )
+}
 
 const Form = ({ onSubmit, name, email, purpose }) => {
   return (

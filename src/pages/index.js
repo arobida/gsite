@@ -20,7 +20,7 @@ const IndexPage = () => {
               textShadow:
                 "3px 3px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000, 1px 1px 0 #000",
             }}>Hello World</h1>
-            <div style={{height:'80px', marginBottom:'1em'}}></div>
+            <div style={{height:'150px', marginBottom:'1em'}}></div>
         </StyledBgImage>
           <Link to="/about">
             <Button fontSize={1.5}>Learn More</Button>
