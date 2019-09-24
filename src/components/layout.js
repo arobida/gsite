@@ -51,7 +51,7 @@ const Layout = ({ children }) => {
 
     return state
   }
-  const isMobile = useMedia("(max-width:500px)")
+  const isMobile = useMedia("(max-width:560px)")
   return (
     <ThemeProvider theme={theme}>
       <>
