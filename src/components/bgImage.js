@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import styled from "styled-components"
+import BackgroundImage from "gatsby-background-image"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,7 +14,7 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const BgImage = () => {
+const BgImage = ({ children, className }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "bg.jpeg" }) {
@@ -25,8 +26,23 @@ const BgImage = () => {
       }
     }
   `)
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  const imageData = data.placeholderImage.childImageSharp.fluid
+  return (
+    <BackgroundImage
+      Tag="section"
+      className={className}
+      fluid={imageData}
+      backgroundColor={`#040e18`}
+    >
+      {children}
+    </BackgroundImage>
+  )
 }
+const StyledBgImage = styled(BgImage)`
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+`
 
-export default BgImage
+export default StyledBgImage
