@@ -15,19 +15,16 @@ const encode = data => {
 }
 const Contact = () => {
   const [toggle, setToggle] = useState(false)
-  const [state, setState] = useState({ name: "", email: "", message: "" })
   const name = useInput("")
   const email = useInput("")
   const message = useInput("")
   const onSubmit = e => {
     e.preventDefault()
     setToggle(!toggle)
-    setState({ name: name.value, email: email.value, message: message.value })
-    console.log(state)
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...state }),
+      body: encode({ "form-name": "contact", "name":name.value,"email":email.value,"message":message.value }),
     })
       .then(() => console.log("Success!"))
       .catch(error => console.log(error))
@@ -38,6 +35,7 @@ const Contact = () => {
     email.clear()
     message.clear()
   }
+  
   return (
     <Layout>
       <SEO title="Contact" />
