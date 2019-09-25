@@ -110,7 +110,7 @@ const Form = ({ onSubmit, name, email, message }) => {
         margin: "1em",
       }}
     >
-      <input type="hidden" name="contact" value="contact" />
+      <input type="hidden" name="form-name" value="contact" />
       <h2>Send A Message</h2>
       <label>Name</label>
       <input
