@@ -7,21 +7,36 @@ import useInput from "../hooks/useInput"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
-
+// for netlify forms
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
 const Contact = () => {
   const [toggle, setToggle] = useState(false)
+  const [state, setState] = useState({ name: "", email: "", message: "" })
   const name = useInput("")
   const email = useInput("")
-  const purpose = useInput("")
+  const message = useInput("")
   const onSubmit = e => {
     e.preventDefault()
     setToggle(!toggle)
+    setState({ name: name.value, email: email.value, message: message.value })
+    console.log(state)
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...state }),
+    })
+      .then(() => console.log("Success!"))
+      .catch(error => console.log(error))
   }
   const reset = () => {
     setToggle(false)
     name.clear()
     email.clear()
-    purpose.clear()
+    message.clear()
   }
   return (
     <Layout>
@@ -40,7 +55,7 @@ const Contact = () => {
             onSubmit={onSubmit}
             name={name}
             email={email}
-            purpose={purpose}
+            message={message}
           />
         ) : (
           <Sent name={name} email={email} reset={reset} />
@@ -50,8 +65,8 @@ const Contact = () => {
           <li>Monday - Friday: 7am-4pm</li>
           <li>Saturday: 9am-3pm</li>
           <li>Sunday: closed</li>
-          </ul>
-          <ul style={{ listStyle: "none", margin: "1em" }}>
+        </ul>
+        <ul style={{ listStyle: "none", margin: "1em" }}>
           <h2>Address</h2>
           <li>6420 Sequence Dr, San Diego, CA 92121</li>
           <li>
@@ -82,9 +97,13 @@ const Sent = ({ name, email, reset }) => {
   )
 }
 
-const Form = ({ onSubmit, name, email, purpose }) => {
+const Form = ({ onSubmit, name, email, message }) => {
   return (
     <form
+      name="contact"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       onSubmit={onSubmit}
       style={{
         display: "flex",
@@ -93,6 +112,7 @@ const Form = ({ onSubmit, name, email, purpose }) => {
         margin: "1em",
       }}
     >
+      <input type="hidden" name="gSite-Form" value="contact" />
       <h2>Send A Message</h2>
       <label>Name</label>
       <input
@@ -136,8 +156,8 @@ const Form = ({ onSubmit, name, email, purpose }) => {
       <textarea
         type="text"
         required
-        value={purpose.value}
-        onChange={purpose.onChange}
+        value={message.value}
+        onChange={message.onChange}
         style={{
           height: "6em",
           width: "20em",
