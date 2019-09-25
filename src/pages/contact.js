@@ -30,7 +30,7 @@ const Contact = () => {
       <div
         style={{
           display: "flex",
-          flexWrap: "wrap-reverse",
+          flexWrap: "wrap",
           justifyContent: "space-around",
           alignItems: "flex-start",
         }}
@@ -50,6 +50,8 @@ const Contact = () => {
           <li>Monday - Friday: 7am-4pm</li>
           <li>Saturday: 9am-3pm</li>
           <li>Sunday: closed</li>
+          </ul>
+          <ul style={{ listStyle: "none", margin: "1em" }}>
           <h2>Address</h2>
           <li>6420 Sequence Dr, San Diego, CA 92121</li>
           <li>
