@@ -7,11 +7,12 @@ import SEO from "../components/seo"
 
 const Services = () => {
   const targetRef = useRef(null)
-  const isIntersecting = useObserver(targetRef, document.querySelector("body"))
+  const doc = document !== typeof "undefined" ? document : null
+  const isIntersecting = useObserver(targetRef, doc.querySelector("body"))
   const appear = useSpring({
     to: { transform: "translateX(0%)" },
     from: { transform: "translateX(100%)" },
-    delay:1500,
+    delay: 1500,
     config: config.slow,
   })
   return (
