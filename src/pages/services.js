@@ -7,30 +7,40 @@ import SEO from "../components/seo"
 
 const Services = () => {
   const targetRef = useRef(null)
-  const isIntersecting = typeof document !== "undefined" ? useObserver(targetRef, document.querySelector("body")):null
+  const isIntersecting =
+    typeof document !== "undefined"
+      ? useObserver(targetRef, document.querySelector("body"))
+      : null
   const appear = useSpring({
     to: { transform: "translateX(0%)" },
-    from: { transform: "translateX(100%)" },
+    from: { transform: "translateX(-300%)" },
     delay: 1500,
     config: config.slow,
   })
+
   return (
     <Layout>
       <div ref={targetRef}>
         <SEO title="Services" />
         <h1>Services</h1>
         <p>Check out all of our services</p>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
           {allServices.map(service => {
             return (
               <div
                 key={service.title}
                 style={{
                   width: "20em",
-                  margin: " 1em auto",
+                  height: "15em",
                   border: "2px solid #333",
                   borderRadius: "1em",
-                  alignSelf: "space-around",
+                  margin: "1em",
                 }}
               >
                 <h3>{service.title}</h3>
