@@ -53,7 +53,10 @@ const Contact = () => {
           <h2>Address</h2>
           <li>6420 Sequence Dr, San Diego, CA 92121</li>
           <li>
-            <ReactIframe url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1714978.134642616!2d-117.1819036310449!3d32.90962349792293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc077b22137d53%3A0x53a49543aaee6587!2sGoogle%20SAN%20Sequence%20Dr!5e0!3m2!1sen!2sus!4v1569343888378!5m2!1sen!2sus" />
+            <ReactIframe
+              url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1714978.134642616!2d-117.1819036310449!3d32.90962349792293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc077b22137d53%3A0x53a49543aaee6587!2sGoogle%20SAN%20Sequence%20Dr!5e0!3m2!1sen!2sus!4v1569343888378!5m2!1sen!2sus"
+              position="relative"
+            />
           </li>
         </ul>
       </div>
