@@ -35,7 +35,7 @@ const Contact = () => {
     email.clear()
     message.clear()
   }
-  
+
   return (
     <Layout>
       <SEO title="Contact" />
@@ -110,7 +110,7 @@ const Form = ({ onSubmit, name, email, message }) => {
         margin: "1em",
       }}
     >
-      <input type="hidden" name="gSite-Form" value="contact" />
+      <input type="hidden" name="contact" value="contact" />
       <h2>Send A Message</h2>
       <label>Name</label>
       <input
