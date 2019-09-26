@@ -7,6 +7,7 @@ import useInput from "../hooks/useInput"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
+import { theme } from "../components/styles/theme"
 // for netlify forms
 const encode = data => {
   return Object.keys(data)
@@ -128,7 +129,8 @@ const Form = ({ onSubmit, name, email, message }) => {
           borderLeft: "0",
           borderRight: "0",
           borderBottomWidth: "1px",
-          borderBottomColor: "#333",
+          borderBottomColor: theme.primaryDark,
+          background:theme.primaryLight
         }}
       />
       <label>Email</label>
@@ -147,7 +149,8 @@ const Form = ({ onSubmit, name, email, message }) => {
           borderLeft: "0",
           borderRight: "0",
           borderBottomWidth: "1px",
-          borderBottomColor: "#333",
+          borderBottomColor: theme.primaryDark,
+          background:theme.primaryLight
         }}
       />
       <label>Reason For Contact</label>
@@ -164,7 +167,8 @@ const Form = ({ onSubmit, name, email, message }) => {
           borderLeft: "0",
           borderRight: "0",
           borderBottomWidth: "1px",
-          borderBottomColor: "#333",
+          borderBottomColor: theme.primaryDark,
+          background:theme.primaryLight
         }}
       />
       <Button fontSize={1} borderRadius=".3em" onClick={onSubmit}>

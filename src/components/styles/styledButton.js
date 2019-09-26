@@ -1,9 +1,10 @@
 import styled from "styled-components"
+import { theme } from "./theme"
 
 const StyledButton = styled.button`
     --borderWidth: 5;
-    --boxShadowDepth: ${({ shadow }) => shadow?shadow:6};
-    --buttonColor: ${({ color }) => color?color:"orange"};
+    --boxShadowDepth: ${({ shadow }) => shadow?shadow:4};
+    --buttonColor: ${({ color }) => color?color:theme.primaryDark};
     --fontSize: ${({ fontSize }) => fontSize?fontSize:3};
     --horizontalPadding: 16;
     --verticalPadding: 8;
@@ -11,7 +12,7 @@ const StyledButton = styled.button`
     border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
     border-radius:${({ borderRadius }) => borderRadius?borderRadius:0};
     box-shadow: calc(var(--boxShadowDepth) * 1px)
-      calc(var(--boxShadowDepth) * 1px) 0 #888;
+      calc(var(--boxShadowDepth) * 1px) 0 #BDBDBD;
     color: var(--buttonColor);
     cursor: pointer;
     font-size: calc(var(--fontSize) * 1rem);
