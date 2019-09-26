@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { useSpring, animated, config } from "react-spring"
 import ReactIframe from "react-iframe"
 import useInput from "../hooks/useInput"
+import useMedia from "../hooks/useMedia"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -16,6 +17,7 @@ const encode = data => {
 }
 const Contact = () => {
   const [toggle, setToggle] = useState(false)
+  const mobile = useMedia(theme.smQuery)
   const name = useInput("")
   const email = useInput("")
   const message = useInput("")
@@ -25,7 +27,12 @@ const Contact = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", "name":name.value,"email":email.value,"message":message.value }),
+      body: encode({
+        "form-name": "contact",
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      }),
     })
       .then(() => console.log("Success!"))
       .catch(error => console.log(error))
@@ -45,8 +52,8 @@ const Contact = () => {
         style={{
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "space-around",
-          alignItems: "flex-start",
+          justifyContent: "center",
+          alignContent:`${mobile?"center":"flex-start"}`
         }}
       >
         {toggle === false ? (
@@ -71,7 +78,6 @@ const Contact = () => {
           <li>
             <ReactIframe
               url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1714978.134642616!2d-117.1819036310449!3d32.90962349792293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc077b22137d53%3A0x53a49543aaee6587!2sGoogle%20SAN%20Sequence%20Dr!5e0!3m2!1sen!2sus!4v1569343888378!5m2!1sen!2sus"
-              position="relative"
             />
           </li>
         </ul>
@@ -130,7 +136,7 @@ const Form = ({ onSubmit, name, email, message }) => {
           borderRight: "0",
           borderBottomWidth: "1px",
           borderBottomColor: theme.primaryDark,
-          background:theme.primaryLight
+          background: theme.primaryLight,
         }}
       />
       <label>Email</label>
@@ -150,7 +156,7 @@ const Form = ({ onSubmit, name, email, message }) => {
           borderRight: "0",
           borderBottomWidth: "1px",
           borderBottomColor: theme.primaryDark,
-          background:theme.primaryLight
+          background: theme.primaryLight,
         }}
       />
       <label>Reason For Contact</label>
@@ -168,7 +174,7 @@ const Form = ({ onSubmit, name, email, message }) => {
           borderRight: "0",
           borderBottomWidth: "1px",
           borderBottomColor: theme.primaryDark,
-          background:theme.primaryLight
+          background: theme.primaryLight,
         }}
       />
       <Button fontSize={1} borderRadius=".3em" onClick={onSubmit}>
