@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import logo from "../images/gatsby-icon.png"
+import { theme } from "./styles/theme"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -23,8 +24,8 @@ const Footer = () => {
       <div
         style={{
           width: "100%",
-          background: "#333",
-          color: "white",
+          background: theme.primaryDark,
+          color:theme.primaryLight
         }}
       >
         <div style={{ textAlign: "center", paddingTop: "1em" }}>
@@ -48,8 +49,8 @@ const Footer = () => {
               <li key={link.node.name} style={{padding:'.3em'}}>
                 <Link
                   to={`/${link.node.name === "index" ? "" : link.node.name}`}
-                  style={{ color: "white" }}
-                  activeStyle={{ color: "orange" }}
+                  style={{ color: theme.primaryLight }}
+                  activeStyle={{ color: theme.dark.orange }}
                 >
                   {link.node.name === "index" ? "home" : link.node.name}
                 </Link>

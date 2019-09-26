@@ -5,6 +5,7 @@ import Headroom from "react-headroom"
 // Components
 import logo from "../images/gatsby-icon.png"
 import Social from "../components/social"
+import { theme } from "./styles/theme"
 
 const nav_links = {
   display: "inline-block",
@@ -13,7 +14,7 @@ const nav_links = {
 const links = {
   width: "2em",
   textTransform: "uppercase",
-  color: "white",
+  color: theme.primaryLight,
   textDecoration: "none",
   fontWeight: "bold",
 }
@@ -26,7 +27,7 @@ const Header = ({ siteTitle }) => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          background: "#333",
+          background: theme.primaryDark,
           paddingLeft: "2em",
           paddingRight: "2em",
         }}
@@ -37,12 +38,12 @@ const Header = ({ siteTitle }) => {
         <nav>
           <ul style={{ listStyle: "none" }}>
             <li className="nav_links" style={nav_links}>
-              <Link to="/" style={links} activeStyle={{ color: "orange" }}>
+              <Link to="/" style={links} activeStyle={{ color: theme.dark.orange }}>
                 Home
               </Link>
             </li>
             <li className="nav_links" style={nav_links}>
-              <Link to="/about" style={links} activeStyle={{ color: "orange" }}>
+              <Link to="/about" style={links} activeStyle={{ color: theme.dark.orange }}>
                 About
               </Link>
             </li>
@@ -50,7 +51,7 @@ const Header = ({ siteTitle }) => {
               <Link
                 to="/services"
                 style={links}
-                activeStyle={{ color: "orange" }}
+                activeStyle={{ color: theme.dark.orange }}
               >
                 Services
               </Link>
@@ -59,14 +60,14 @@ const Header = ({ siteTitle }) => {
               <Link
                 to="/contact"
                 style={links}
-                activeStyle={{ color: "orange" }}
+                activeStyle={{ color: theme.dark.orange }}
               >
                 Contact
               </Link>
             </li>
           </ul>
         </nav>
-        <Social color="white"/>
+        <Social color={theme.primaryLight}/>
       </header>
     </Headroom>
   )

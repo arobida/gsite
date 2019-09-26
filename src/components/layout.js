@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
   `)
   const useMedia = (query, defaultState = false) => {
     const [state, setState] = useState(defaultState)
-
+    console.log(theme)
     useEffect(() => {
       let mounted = true
       const mql = window.matchMedia(query)
