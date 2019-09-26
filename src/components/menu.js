@@ -1,7 +1,7 @@
 import React from "react"
 import { bool } from "prop-types"
-import theme from "../components/styles/theme"
 import { StyledMenu } from "./styles/styledMenu"
+import {theme} from "./styles/theme"
 import { Link } from "gatsby"
 import logo from "../images/gatsby-icon.png"
 import Social from "./social"
